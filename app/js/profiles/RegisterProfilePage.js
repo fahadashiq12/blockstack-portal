@@ -294,10 +294,11 @@ class RegisterPage extends Component {
     } else {
       const addressIndex = this.findAddressIndex(ownerAddress)
 
+
       const address = this.props.identityAddresses[addressIndex]
       const keypair = this.props.identityKeypairs[addressIndex]
 
-      this.props.registerName(this.props.api, domainName, address, keypair)
+      this.props.registerName(this.props.api, domainName, address, keypair, true)
       this.updateAlert('success', 'Name preordered! Waiting for registration confirmation.')
       this.setState({ registrationLock: false })
     }
